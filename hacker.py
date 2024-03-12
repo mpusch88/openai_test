@@ -2,8 +2,11 @@ import os
 import sys
 import time
 import openai
-import keyboard
+# import keyboard
 from dotenv import load_dotenv
+
+# TODO - try to get keyboard to work on mac
+# TODO - or, actually remove keyboard dependency
 
 
 def loading_message(num_dots):
@@ -88,8 +91,8 @@ else:
     user_input = preamble + inputString
 
 while len(history) < 5:
-    if keyboard.is_pressed("esc"):
-        break
+    # if keyboard.is_pressed("esc"):
+    #     break
 
     if len(history) == 0:
         completion_text = process_conversation(user_input, history)
